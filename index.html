@@ -629,9 +629,9 @@
             await navigator.clipboard.writeText(num);
             copyCount++;
             copyCountEl.textContent = copyCount;
-            alert("নম্বর কপি হয়েছে: " + num);
+            alert("Number copied: " + num);
           } catch {
-            alert("কপি করা যায়নি");
+            alert("Could not be copied");
           }
         }
         const call = e.target.closest(".call");
@@ -651,10 +651,10 @@
             });
             li.innerHTML = `<div class="flex flex-col gap-1"><strong class="text-sm">${title}</strong><div class="text-muted text-xs">${num}</div></div><div class="text-muted text-xs text-right min-w-[88px]">${timeStr}</div>`;
             historyList.prepend(li);
-            alert(`কল করা হচ্ছে: ${title} ${num}`);
+            alert(`Calling: ${title} ${num}`);
             window.location.href = "tel:" + num.replace(/[^0-9+]/g, "");
           } else {
-            alert("দুঃখিত, আপনার পর্যাপ্ত কয়েন নেই।");
+            alert("Sorry, you don't have enough coins.");
           }
         }
         const favorite = e.target.closest(".favorite");
@@ -669,7 +669,7 @@
       });
       document.getElementById("clearHistory").addEventListener("click", () => {
         historyList.innerHTML = "";
-        alert("কল হিস্ট্রি ক্লিয়ার করা হলো");
+        alert("Call history cleared.");
       });
     </script>
   </body>
