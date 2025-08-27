@@ -4,10 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Emergency Service Directory</title>
-     <link rel="icon" type="image/x-icon" href="./assets/logo-dark.png">
+    <link rel="icon" type="image/x-icon" href="./assets/logo-dark.png" />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
@@ -73,7 +72,7 @@
             class="flex items-center justify-center h-8 w-16 md:h-8 md:w-20 gap-1 p-1 rounded-full bg-slate-50 border border-gray-200 font-bold text-xs md:text-sm text-hero-green-start"
           >
             <span class="grid place-items-center">
-              <i class="fa-solid fa-heart text-sm" style="color: #e05252"></i>
+              <img class="w-4 h-4" src="./assets/heart.png" alt="" srcset="" />
             </span>
             <span id="favCount">0</span>
           </div>
@@ -81,7 +80,7 @@
             class="flex items-center justify-center h-8 w-16 md:h-8 md:w-20 gap-1 p-1 rounded-full bg-slate-50 border border-gray-200 font-bold text-xs md:text-sm text-hero-green-start"
           >
             <span class="grid place-items-center">
-              <i class="fa-solid fa-coins text-sm" style="color: #f6b21b"></i>
+              <img class="w-4 h-4" src="./assets/coin.png" alt="" srcset="" />
             </span>
             <span id="coinCount">100</span>
           </div>
@@ -235,7 +234,11 @@
               class="w-12 h-12 rounded-xl grid place-items-center shadow-sm"
               style="background: #fff2f2"
             >
-              <img class="w-6 h-6" src="./assets/fire-service.png" alt="Fire Service" />
+              <img
+                class="w-6 h-6"
+                src="./assets/fire-service.png"
+                alt="Fire Service"
+              />
             </div>
             <div
               class="w-7 h-7 rounded-full grid place-items-center text-red-600/70 text-sm cursor-pointer favorite"
@@ -449,7 +452,6 @@
             </div>
             <div
               class="w-7 h-7 rounded-full grid place-items-center text-red-600/70 text-sm cursor-pointer favorite"
-              title="Favorite"
             >
               <i class="fa-regular fa-heart"></i>
             </div>
@@ -604,7 +606,7 @@
           </button>
         </div>
         <ul
-          class="list-none m-0 p-0 max-h-[420px] overflow-auto"
+          class="list-none m-0 p-0 flex flex-col gap-2 max-h-[420px] overflow-auto"
           id="historyList"
         ></ul>
       </aside>
@@ -640,6 +642,8 @@
             coinCount -= 20;
             coinCountEl.textContent = coinCount;
             const li = document.createElement("li");
+            li.className =
+              "bg-white p-3 rounded-lg border border-border shadow-sm flex items-center justify-between";
             const timeStr = new Date().toLocaleTimeString([], {
               hour: "2-digit",
               minute: "2-digit",
